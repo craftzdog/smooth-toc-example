@@ -1,5 +1,8 @@
 import { create } from 'zustand'
-import { mdastExtractHeadings, TOCHeading } from '@/utils/mdast-toc'
+import {
+  mdastExtractHeadings,
+  TOCHeading
+} from '@/utils/mdast-extract-headings'
 import { loggerMiddleware } from './logger'
 import type { Root } from 'mdast'
 import type { RefObject } from 'react'
