@@ -1,6 +1,7 @@
 import { EXIT, visit } from 'unist-util-visit'
 import YAML from 'yaml'
 import { create } from 'zustand'
+import { mdastExtractHeadings } from '@/utils/mdast-extract-headings'
 import type { Root as HastRoot } from 'hast'
 import type { Root as MdastRoot } from 'mdast'
 
@@ -37,6 +38,9 @@ export const useContentStore = create<ContentState>(set => ({
         title = frontmatter.title || ''
         return EXIT
       })
+
+      const headings = mdastExtractHeadings(mdast)
+      console.log('headings:', headings)
 
       set({ dom, mdast, hast, title, lastError: null })
     } catch (e: any) {
