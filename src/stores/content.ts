@@ -1,7 +1,7 @@
 import { EXIT, visit } from 'unist-util-visit'
 import YAML from 'yaml'
 import { create } from 'zustand'
-import { mdastExtractHeadings } from '@/utils/mdast-extract-headings'
+import { useTocStore } from './toc'
 import type { Root as HastRoot } from 'hast'
 import type { Root as MdastRoot } from 'mdast'
 
@@ -39,10 +39,8 @@ export const useContentStore = create<ContentState>(set => ({
         return EXIT
       })
 
-      const headings = mdastExtractHeadings(mdast)
-      console.log('headings:', headings)
-
       set({ dom, mdast, hast, title, lastError: null })
+      useTocStore.getState().update(mdast)
     } catch (e: any) {
       console.error(`Failed to render preview: ${e.stack}`)
       set({
