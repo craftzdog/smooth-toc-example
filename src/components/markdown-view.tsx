@@ -1,3 +1,4 @@
+import './markdown-view.css'
 import React, { useEffect } from 'react'
 import { Box } from '@kuma-ui/core'
 import markdownContent from '@/example.md?raw'
