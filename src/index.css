@@ -6,6 +6,7 @@
   theme;
 
 @import 'modern-normalize' layer(reset);
+@import './tokens.css';
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
