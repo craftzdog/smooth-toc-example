@@ -1,5 +1,6 @@
 import { Box, Heading } from '@kuma-ui/core'
 import { useTocStore } from '@/stores/toc'
+import { MarkdownOutlineActiveSectionHighlight } from './markdown-outline-active-section-highlight'
 import { MarkdownOutlineItem } from './markdown-outline-item'
 
 export const MarkdownOutlineView = () => {
@@ -23,6 +24,7 @@ export const MarkdownOutlineView = () => {
           width="1px"
           backgroundColor="var(--color-muted)"
         />
+        <MarkdownOutlineActiveSectionHighlight />
         <Box as="ul" role="list" m={0} pl="1.5rem" listStyle="none">
           {sections &&
             sections.map(heading => (
