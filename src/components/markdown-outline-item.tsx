@@ -1,5 +1,6 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Box, Link } from '@kuma-ui/core'
+import { useTocStore } from '@/stores/toc'
 import { TOCHeading } from '@/utils/mdast-extract-headings'
 
 type Props = TOCHeading & { active: boolean }
@@ -7,6 +8,11 @@ type Props = TOCHeading & { active: boolean }
 export const MarkdownOutlineItem = (props: Props) => {
   const { id, level, value, active } = props
   const refItem = useRef<HTMLLIElement>(null)
+  const registerOutlineItem = useTocStore(state => state.registerOutlineItem)
+
+  useEffect(() => {
+    if (id) registerOutlineItem(id, refItem)
+  }, [id, registerOutlineItem])
 
   return (
     <Box
