@@ -5,7 +5,9 @@
 This is a demo project of a smoothly animated table of contents.
 It is a simple web app rendering Markdown content with a table of contents that smoothly highlights currently active headings.
 
-For more details, check out [the blog post](https://www.devas.life/how-to-build-a-smoothly-animated-table-of-contents-with-framer-motion-and-kuma-ui/).
+For more details, check out [the blog post](https://www.devas.life/how-to-build-a-smoothly-animated-table-of-contents-with-framer-motion-and-kuma-ui/) and the video tutorial:
+
+[![](./images/video-tutorial.png)](https://youtu.be/4g26x6FzuBU)
 
 ## Stack
 
