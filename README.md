@@ -1,50 +1,18 @@
-# React + TypeScript + Vite
+# Smoothly animated table of contents example
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![screenshot](./images/screenshot.png)
 
-Currently, two official plugins are available:
+This is a demo project of a smoothly animated table of contents.
+It is a simple web app rendering Markdown content with a table of contents that smoothly highlights currently active headings.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For more details, check out [the blog post](https://www.devas.life/how-to-build-a-smoothly-animated-table-of-contents-with-framer-motion-and-kuma-ui/).
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname
-    }
-  }
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules
-  }
-})
-```
+- [Bun — A fast all-in-one JavaScript runtime](https://bun.sh/)
+- [`framer-motion`](https://www.framer.com/motion/) for animations.
+- [`zustand`](https://zustand-demo.pmnd.rs/) for state management.
+- [`kuma-ui`](https://www.kuma-ui.com/) for building UI components
+  - [Installation | Kuma UI](https://www.kuma-ui.com/docs/install)
+- `prettier` for formtting code
+- [`modern-normalize`](https://github.com/sindresorhus/modern-normalize) for normalizing browsers' default style
