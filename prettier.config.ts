@@ -1,0 +1,25 @@
+import type { Config } from "prettier";
+
+const config: Config = {
+  arrowParens: "avoid",
+  singleQuote: true,
+  bracketSpacing: true,
+  endOfLine: "lf",
+  semi: false,
+  tabWidth: 2,
+  trailingComma: "none",
+  plugins: ["@ianvs/prettier-plugin-sort-imports"],
+  importOrder: [
+    "<BUILTIN_MODULES>",
+    "^react",
+    "<THIRD_PARTY_MODULES>",
+    "^@inkdropapp",
+    "^@[/]",
+    "^[.].*$",
+    "<TYPES>",
+    "^[/].*$",
+    "[.]css$",
+  ],
+};
+
+export default config;
